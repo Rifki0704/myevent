@@ -35,7 +35,7 @@ const EventDetails = async ({params: {id}, searchParams}: SearchParamProps) => {
                         <p className="p-bold-20 rounded-full bg-green-500/10 px-5 py-2 text-green-700">
                             {event.isFree ? 'FREE' : `$${event.price}`}
                         </p>
-                        <p className="p-medium-16 rounded-full bg-grey-500/10 px-4 py-2.5 text-grey-500">
+                        <p className="p-medium-16 rounded-full bg-grey-500/10 px-4 py-2.5 text-grey-500 line-clamp-1">
                             {event.category.name}
                         </p>
                         </div>
@@ -52,11 +52,11 @@ const EventDetails = async ({params: {id}, searchParams}: SearchParamProps) => {
                 <div className="flex flex-col gap-5">
                     <div className="flex gap-2 md:gap-3">
                         <Image src="/assets/icons/calendar.svg" alt="calendar" width={32} height={32} />
-                        <div className="p-medium-16 lg:p-regular-20 flex flex-wrap items-center">
+                        <div className="p-medium-16 lg:p-regular-18 flex flex-wrap items-center">
                         <p>
                             {formatDateTime(event.startDateTime).dateOnly} - {' '}
                             {formatDateTime(event.startDateTime).timeOnly} 
-                        - </p>
+                         - </p>
                         <p>
                             {formatDateTime(event.endDateTime).dateOnly} -  {' '}
                             {formatDateTime(event.endDateTime).timeOnly}
@@ -66,7 +66,7 @@ const EventDetails = async ({params: {id}, searchParams}: SearchParamProps) => {
 
                     <div className="p-regular-20 flex items-center gap-3">
                         <Image src="/assets/icons/location.svg" alt="location" width={32} height={32} />
-                        <p className="p-medium-16 lg:p-regular-20">{event.location}</p>
+                        <p className="p-medium-16 lg:p-regular-18">{event.location}</p>
                     </div>
                 </div>
 
